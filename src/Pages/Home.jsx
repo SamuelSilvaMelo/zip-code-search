@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { handleZipCodeInput } from '../redux/actions';
+import { handleZipCodeInput, requestZipCode } from '../redux/actions';
 
 const Home = (props) => {
-  const { handleInput } = props;
+  const { handleInput, requestZipCodeData, zipCode } = props;
   return (
     <form>
       <label>
@@ -17,6 +17,7 @@ const Home = (props) => {
       </label>
       <button
         type="button"
+        onClick={ () => requestZipCodeData(zipCode) }
       >
         Pesquisar
       </button>
@@ -24,8 +25,13 @@ const Home = (props) => {
   )
 }
 
+const mapStateToProps = (state) => ({
+  zipCode: state.formReducer.zipCode,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   handleInput: ({ target }) => dispatch(handleZipCodeInput(target)),
-})
+  requestZipCodeData: (zipCode) => dispatch(requestZipCode(zipCode)),
+});
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
