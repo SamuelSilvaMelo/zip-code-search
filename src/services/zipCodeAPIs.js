@@ -1,5 +1,5 @@
 export const viaCEP = (zipCode) => (
-  fetch(`https://.com.br/ws/${zipCode}/json/`)
+  fetch(`https://viacep.com.br/ws/${zipCode}/json/`)
     .then((response) => response.json())
     .then((data) => {
       const { cep, logradouro, bairro, localidade, uf, erro } = data;
@@ -26,7 +26,7 @@ export const viaCEP = (zipCode) => (
 );
 
 export const apiCEP = (zipCode) => (
-  fetch(`https://ws..com/busca-cep/api/cep/${zipCode}.json`)
+  fetch(`https://ws.apicep.com/busca-cep/api/cep/${zipCode}.json`)
     .then((response) => response.json())
     .then((data) => {
       const { code, address, district, city, state, ok } = data;

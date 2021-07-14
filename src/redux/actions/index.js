@@ -11,10 +11,17 @@ export const ZIP_CODE_FAILURE = 'ZIP_CODE_FAILURE';
 
 export const handleZipCodeInput = (target) => {
   const { value } = target;
-  return {
+  if (value.length === 5) {
+    return ({
+      type: HANDLE_ZIP_CODE_INPUT,
+      zipCode: `${value}-`,
+    })
+  }
+
+  return ({
     type: HANDLE_ZIP_CODE_INPUT,
     zipCode: value,
-  }
+  })
 };
 
 export const zipCodeRequest = () => ({
