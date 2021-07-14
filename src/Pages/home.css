@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+main img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+main h1 {
+  color: #10427b;
+  margin-bottom: 20px;
+}
+
+.zipCode-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.zipCode-form input {
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.zipCode-form button {
+  border: 1px solid #b2b5bc;
+  border-radius: 8px;
+  background-color: #b2b5bc;
+  padding: 5px
+}
+
+.zipCode-form button:hover {
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.css';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { handleZipCodeInput, requestZipCode } from '../redux/actions';
@@ -39,35 +40,39 @@ class Home extends React.Component {
     const { showModal } = this.state;
     const { handleInput, zipCodeMask, ZipCodeData } = this.props;
     return (
-      <form>
-        <label>
-          <input
-            id="CEP-Input"
-            name="CEP-Input"
-            onChange={ handleInput }
-            placeholder="Digite seu CEP"
-            maxLength="9"
-            type="text"
-            value={ zipCodeMask }
-          />
-        </label>
-        <button
-          type="button"
-          onClick={ () => this.handleOpenModal() }
-        >
-          Pesquisar
-        </button>
-        <Modal
-          isOpen={showModal}
-          onRequestClose={this.handleCloseModal}
-          contentLabel="Example Modal"
-        >
-          {(!ZipCodeData.failure) 
-            ? <ZipCodeInfo />
-            : <ZipCodeError />
-          }
-        </Modal>
-      </form>
+      <main>
+        <img src="/logo.jpg" alt="Logo Site"/>
+        <h1>Encontre seu CEP</h1>
+        <form className="zipCode-form">
+          <label htmlFor="zipCode-input">
+            <input
+              id="zipCode-input"
+              name="zipCode-input"
+              onChange={ handleInput }
+              placeholder="Digite seu CEP"
+              maxLength="9"
+              type="text"
+              value={ zipCodeMask }
+            />
+          </label>
+          <button
+            type="button"
+            onClick={ () => this.handleOpenModal() }
+          >
+            Pesquisar
+          </button>
+          <Modal
+            isOpen={showModal}
+            onRequestClose={this.handleCloseModal}
+            contentLabel="Example Modal"
+          >
+            {(!ZipCodeData.failure) 
+              ? <ZipCodeInfo />
+              : <ZipCodeError />
+            }
+          </Modal>
+        </form>
+      </main>
     )
   }
 }
