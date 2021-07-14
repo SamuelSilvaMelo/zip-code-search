@@ -28,10 +28,19 @@ export const zipCodeRequest = () => ({
   type: ZIP_CODE_REQUEST,
 });
 
-export const zipCodeReceive = (data) => ({
-  type: ZIP_CODE_RECEIVE,
-  data,
-});
+export const zipCodeReceive = (data) => {
+  const { sourse, code, address, district, city, state, status } = data;
+  return ({
+    type: ZIP_CODE_RECEIVE,
+    sourse,
+    code,
+    address,
+    district,
+    city,
+    state,
+    status,
+  })
+};
 
 export const zipCodeFailure = () => ({
   type: ZIP_CODE_FAILURE,

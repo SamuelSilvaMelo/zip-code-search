@@ -5,7 +5,13 @@ import {
 } from '../actions';
 
 const INITIAL_STATE = {
-  data: [],
+  sourse: '',
+  code: '',
+  address: '',
+  district: '',
+  city: '',
+  state: '',
+  status: 'not-request',
   isFetching: false,
   failure: false,
 }
@@ -20,7 +26,13 @@ const zipCodeDataReducer = (state = INITIAL_STATE, action) => {
   case ZIP_CODE_RECEIVE:
     return {
       ...state,
-      data: [action.data],
+      sourse: action.sourse,
+      code: action.code,
+      address: action.address,
+      district: action.district,
+      city: action.city,
+      state: action.state,
+      status: action.status,
       isFetching: false,
     };
   case ZIP_CODE_FAILURE:

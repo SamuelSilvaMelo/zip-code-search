@@ -13,13 +13,11 @@ export const viaCEP = (zipCode) => (
 
       return ({
         sourse: 'https://viacep.com.br',
-        data: [{
-          Code: cep,
-          Address: logradouro,
-          District: bairro,
-          City: localidade,
-          State: uf,
-        }],
+        code: cep,
+        address: logradouro,
+        district: bairro,
+        city: localidade,
+        state: uf,
         status: 'OK'
       })
     })
@@ -40,13 +38,11 @@ export const apiCEP = (zipCode) => (
 
       return ({
         sourse: 'https://apicep.com/api-de-consulta/',
-        data: [{
-          Code: code,
-          Address: address,
-          District: district,
-          City: city,
-          State: state,
-        }],
+        code: code,
+        address: address,
+        district: district,
+        city: city,
+        state: state,
         status: 'OK',
       })
     })
@@ -67,13 +63,11 @@ export const findCEP = (zipCode) => (
 
       return ({
         sourse: 'https://www.findcep.com/',
-        data: [{
-          Code: cep,
-          Address: logradouro,
-          District: bairro,
-          City: cidade,
-          State: uf,
-        }],
+        code: cep,
+        address: logradouro,
+        district: bairro,
+        city: cidade,
+        state: uf,
         status: 'OK',
       })
     })
