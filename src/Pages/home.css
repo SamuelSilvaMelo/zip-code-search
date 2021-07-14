@@ -48,3 +48,39 @@ main h1 {
   font-weight: 700;
   cursor: pointer;
 }
+
+.modal-box {
+  background: white;
+  border: 1px solid #10427b;
+  border-radius: 4px;
+  height: max-content;
+  inset: 40px;
+  line-height: 25px;
+  margin: auto;
+  outline: none;
+  overflow: auto;
+  padding: 50px;
+  position: absolute;
+  width: max-content;
+}
+
+.zip-code-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.zip-code-footer a , .zip-code-footer button {
+  color: black;
+  text-decoration: none;
+  border: 1px solid #b2b5bc;
+  border-radius: 8px;
+  background-color: #b2b5bc;
+  padding: 5px;
+  margin: 10px;
+}
+
+.zip-code-footer a:hover , .zip-code-footer button:hover {
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}

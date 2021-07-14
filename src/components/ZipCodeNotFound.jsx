@@ -2,11 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const ZipCodeNotFound = (props) => {
-  const { ZipCodeData } = props;
+  const { ZipCodeData, handleCloseModal } = props;
   return (
     <div>
-      CEP não encontrado. Verifique se digitou corretamente e tente outra vez.
-      <a href={ ZipCodeData.sourse }>Fonte</a>
+      <h3>CEP não encontrado. Verifique se digitou corretamente e tente outra vez.</h3>
+      <div className="zip-code-footer">
+        <a
+          href={ ZipCodeData.sourse }
+          target="_blank"
+          rel="noreferrer"
+        >
+          Fonte
+        </a>
+        <button
+          type="button"
+          onClick={ handleCloseModal }
+        >
+          Sair
+        </button>
+      </div>
     </div>
   )
 };
