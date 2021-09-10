@@ -11,16 +11,11 @@ export const ZIP_CODE_FAILURE = 'ZIP_CODE_FAILURE';
 
 export const handleZipCodeInput = (target) => {
   const { value } = target;
-  if (value.length === 5) {
-    return ({
-      type: HANDLE_ZIP_CODE_INPUT,
-      zipCode: `${value}-`,
-    })
-  }
 
+  // CEP Mask: https://pt.stackoverflow.com/questions/199264/como-faco-uma-mascara-para-um-input/199276
   return ({
     type: HANDLE_ZIP_CODE_INPUT,
-    zipCode: value,
+    zipCode: value.replace(/^(\d{5})(\d)/,"$1-$2"),
   })
 };
 

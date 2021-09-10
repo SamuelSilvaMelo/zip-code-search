@@ -8,8 +8,9 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
+  min-width: 320px;
 }
 
 main img {
@@ -50,6 +51,11 @@ main h1 {
 }
 
 .modal-box {
+  display: flex;
+  height: 100%;
+}
+
+.modal-box-info {
   background: white;
   border: 1px solid #10427b;
   border-radius: 4px;
@@ -57,10 +63,11 @@ main h1 {
   inset: 40px;
   line-height: 25px;
   margin: auto;
+  min-width: 290px;
+  min-height: 260px;
   outline: none;
   overflow: auto;
   padding: 50px;
-  position: absolute;
   width: max-content;
 }
 
@@ -83,4 +90,12 @@ main h1 {
   color: white;
   cursor: pointer;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 370px) {
+
+  .modal-box-info {
+    padding: 30px;
+  }
+
 }

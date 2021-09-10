@@ -67,10 +67,12 @@ class Home extends React.Component {
             onRequestClose={this.handleCloseModal}
             contentLabel="Example Modal"
           >
-            {(!ZipCodeData.failure) 
-              ? <ZipCodeInfo handleCloseModal={ this.handleCloseModal } />
-              : <ZipCodeError handleCloseModal={ this.handleCloseModal } />
-            }
+            <div className="modal-box-info">
+              {(!ZipCodeData.failure) 
+                ? <ZipCodeInfo handleCloseModal={ this.handleCloseModal } />
+                : <ZipCodeError handleCloseModal={ this.handleCloseModal } />
+              }
+            </div>
           </Modal>
         </form>
       </main>
