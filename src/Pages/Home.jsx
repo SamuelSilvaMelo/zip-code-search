@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css';
+import logoSite from '../img/logo.jpg'
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { handleZipCodeInput, requestZipCode } from '../redux/actions';
@@ -41,7 +42,7 @@ class Home extends React.Component {
     const { handleInput, zipCodeMask, ZipCodeData } = this.props;
     return (
       <main>
-        <img src="/logo.jpg" alt="Logo Site"/>
+        <img src={ logoSite } alt="Logo Site"/>
         <h1>Encontre seu CEP</h1>
         <form className="zipCode-form">
           <label htmlFor="zipCode-input">
